@@ -22,7 +22,7 @@ var path = {
         css: 'build/static/css/',
         img: 'build/static/img/',
         fonts: 'build/static/fonts/',
-        themeFiles: 'build/static/',
+        themeFiles: 'build/',
     },
     src: {
         html: 'src/*.html',
@@ -128,6 +128,9 @@ gulp.task('watch', function(){
     });
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
+    });
+    watch([path.watch.themeFiles], function(event, cb) {
+        gulp.start('files:build');
     });
 });
 

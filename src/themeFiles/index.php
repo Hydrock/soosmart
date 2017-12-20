@@ -10,13 +10,81 @@
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/static/css/main.css?<?php echo date_timestamp_get(date_create()) ?>">
 </head>
 <body>
-  <?php get_header(); ?>
+  <div class="container-wrapper">
+    <?php get_header(); ?>
 
-  <main>
-    <div class="container">
-      Content here
-    </div>
-  </main>
+    <main>
+      <div class="container">
+        <div class="row">
+          <!-- <div class="col-lg-3">
+            asfasf
+          </div> -->
+          <div class="col-lg-12">
+            <div class="main-hello-section">
+              <div class="row">
+                <div class="col-lg-6">
+                  <a href="#" class="main-hello-block">
+                    <img src="http://englishpnz.ru/sites/default/files/images/kursi/individ.jpg" class="main-hello-block__image" alt="img">
+                    <h2 class="main-hello-block__title">
+                      Индивидуальные занятия
+                    </h2>
+                    <h3 class="main-hello-block__subtitle">
+                      Индивидуальные занятия
+                    </h3>
+                  </a>
+                </div>
+                <div class="col-lg-6">
+                  <a href="#" class="main-hello-block">
+                    <img src="http://learnthaireviews.com/wp-content/uploads/2014/05/learn-thai-language-group-or-private.jpg" class="main-hello-block__image" alt="img">
+                    <h2 class="main-hello-block__title">
+                      Групповые занятия
+                    </h2>
+                    <h3 class="main-hello-block__subtitle">
+                      Групповые занятия
+                    </h3>
+                  </a>
+                </div>
+                <div class="col-lg-4">
+                  <a href="#" class="main-hello-block">
+                    <img src="http://kavkazplus.com/photos/online.JPG" class="main-hello-block__image" alt="img">
+                    <h2 class="main-hello-block__title">
+                      Онлайн решения
+                    </h2>
+                    <h3 class="main-hello-block__subtitle">
+                      Онлайн решения
+                    </h3>
+                  </a>
+                </div>
+                <div class="col-lg-4">
+                  <a href="#" class="main-hello-block">
+                    <img src="http://new-ton.by/wp-content/uploads/2017/07/P1040273-750x375.jpg" class="main-hello-block__image" alt="img">
+                    <h2 class="main-hello-block__title">
+                      Наши преподаватели
+                    </h2>
+                    <h3 class="main-hello-block__subtitle">
+                      Наши преподаватели
+                    </h3>
+                  </a>
+                </div>
+                <div class="col-lg-4">
+                  <a href="#" class="main-hello-block">
+                    <img src="http://www.don-ald.ru/wp-content/uploads/2015/12/1960-1969.jpg" class="main-hello-block__image" alt="img">
+                    <h2 class="main-hello-block__title">
+                      Офис в центре города
+                    </h2>
+                    <h3 class="main-hello-block__subtitle">
+                      Офис в центре города
+                    </h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
 
   <?php get_footer(); ?>
   <!-- Optional JavaScript -->
