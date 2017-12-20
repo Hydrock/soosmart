@@ -2,17 +2,21 @@
 
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
-    prefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     rigger = require('gulp-rigger'),
-    cleanCSS = require('gulp-clean-css'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
+    postcss = require('gulp-postcss'),
     reload = browserSync.reload;
+
+
+    var autoprefixer = require('autoprefixer');
+    var cssnano = require('cssnano');
+    var doiuse = require('doiuse')
 
 
 var path = {
@@ -71,15 +75,26 @@ gulp.task('js:build', function () {
       .pipe(reload({stream: true}));
 });
 
+
 gulp.task('style:build', function () {
+  var plugins = [
+    autoprefixer({browsers: ['last 1 version']}),
+    doiuse({
+      browsers: ['ie >= 11', '> 1%', 'not op_mini all'],
+      ignore: ['rem'],
+      onFeatureUsage: function (usageInfo) {
+        //console.log(usageInfo.message)
+      }
+    }),
+    cssnano({preset: ['default', {}] })
+  ];
   gulp.src(path.src.style)
-      .pipe(sourcemaps.init())
-      .pipe(sass())
-      .pipe(prefixer())
-      .pipe(cleanCSS())
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest(path.build.css))
-      .pipe(reload({stream: true}));
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(postcss(plugins))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(path.build.css))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('image:build', function () {

@@ -19,8 +19,6 @@
   "dependencies": {
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean-css": "^3.9.0",
     "gulp-imagemin": "^3.4.0",
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^3.1.0",
@@ -28,5 +26,11 @@
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^4.3.11",
     "imagemin-pngquant": "^5.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "cssnano": "^3.10.0",
+    "doiuse": "^4.0.0",
+    "gulp-postcss": "^7.0.0"
   }
 }
