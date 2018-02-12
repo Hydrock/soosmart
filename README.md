@@ -1,2 +1,2 @@
 # soosmart
-Custom wordpress theme for business
+Custom wordpress theme for business 
